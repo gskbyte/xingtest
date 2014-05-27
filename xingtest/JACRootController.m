@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, JACCellIndex)
 {
     JACCellIndexTitle = 0,
     JACCellIndexContacts,
+    JACCellIndexVisits,
     
     JACCellIndexCount
 };
@@ -42,6 +43,7 @@ typedef NS_ENUM(NSUInteger, JACCellIndex)
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
     
+    //[[XNGAPIClient sharedClient] logout];
     if( ! [XNGAPIClient sharedClient].isLoggedin ) {
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Login requested", @"Login requested")
                                                              message:NSLocalizedString(@"This app needs your permission to access your XING account", @"")
@@ -59,7 +61,10 @@ typedef NS_ENUM(NSUInteger, JACCellIndex)
 {
     [[XNGAPIClient sharedClient] getUserWithID:@"me" userFields:nil success:^(id JSON) {
         NSLog(@"%@", JSON);
-        _user = JSON[@"users"][0];
+        _user = [JSON get:@"users.0"];
+        
+        NSLog(@"%@", _user);
+        
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
@@ -138,6 +143,12 @@ typedef NS_ENUM(NSUInteger, JACCellIndex)
             return cell;
         }
             break;
+        case JACCellIndexVisits: {
+            UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"visits" forIndexPath:indexPath];
+            
+            return cell;
+        }
+            break;
         default:
             return nil; // explode!
     }
@@ -151,6 +162,8 @@ typedef NS_ENUM(NSUInteger, JACCellIndex)
         [segue.destinationViewController setContactId:@"me"];
     } else if([segue.identifier isEqualToString:@"contacts"]) {
         [segue.destinationViewController setContact:_user];
+    } else if([segue.identifier isEqualToString:@"visits"]) {
+        
     }
 }
 

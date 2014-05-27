@@ -17,6 +17,6 @@ static NSString * const NSDictionaryTreeAccessSeparator = @".";
 - (id) get:(NSString*)key;
 
 - (id)   get:(NSString*)key
-defaultValue:(NSString*)def;
+defaultValue:(id)def;
 
 @end

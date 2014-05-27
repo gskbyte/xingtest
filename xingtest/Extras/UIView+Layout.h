@@ -80,7 +80,6 @@
 - (void) alignParentLeft;
 - (void) alignParentRight;
 
-
 - (void) positionAboveView:(UIView*)view
                     margin:(CGFloat)margin;
 - (void) positionBelowView:(UIView*)view
@@ -99,10 +98,6 @@
 - (void) alignRight:(UIView*)view
              margin:(CGFloat)margin;
 
-- (void) alignParentTopWithMargin:(CGFloat)margin;
-- (void) alignParentBottomWithMargin:(CGFloat)margin;
-- (void) alignParentLeftWithMargin:(CGFloat)margin;
-- (void) alignParentRightWithMargin:(CGFloat)margin;
 
 
 - (void) setPositionAndSizeFromView:(UIView*)view;

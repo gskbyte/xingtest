@@ -17,17 +17,17 @@
 }
 
 - (id)   get:(NSString*)key
-defaultValue:(NSString*)def
+defaultValue:(id)def
 {
     NSArray * path = [key componentsSeparatedByString:NSDictionaryTreeAccessSeparator];
     id object = self;
     for(NSString * k in path) {
-        if(object == nil) {
-            return def;
-        } else if([object isKindOfClass:[NSDictionary class]]) {
+        if([object isKindOfClass:[NSDictionary class]]) {
             object = [object objectForKey:k];
         } else if([object isKindOfClass:[NSArray class]]) {
             object = [object objectAtIndex:k.integerValue];
+        } if(object == nil || [object isKindOfClass:[NSNull class]]) {
+            return def;
         } else {
             NSLog(@"Error: accessing invalid path '%@' for dictionary: %@", path, self);
         }

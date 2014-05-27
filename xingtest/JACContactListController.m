@@ -48,7 +48,7 @@
 
 - (void) requestContacts:(NSUInteger)offset
 {
-    [[XNGAPIClient sharedClient] getContactsForUserID:self.contact[@"id"] limit:10 offset:offset orderBy:XNGContactsOrderOptionByLastName userFields:@"id,display_name,photo_urls,professional_experience.primary_company" success:^(id JSON) {
+    [[XNGAPIClient sharedClient] getContactsForUserID:self.contact[@"id"] limit:16 offset:offset orderBy:XNGContactsOrderOptionByLastName userFields:@"id,display_name,photo_urls,professional_experience.primary_company" success:^(id JSON) {
         NSLog(@"contacts: %@", JSON);
         [self.refreshControl endRefreshing];
         

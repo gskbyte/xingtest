@@ -94,7 +94,7 @@
                                     <segue destination="CCC-fj-PFY" kind="push" identifier="contacts" id="ErT-tV-Gjd"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ii1-Li-ZSh" detailTextLabel="joz-gZ-oC4" style="IBUITableViewCellStyleValue1" id="1IC-ko-Qeh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="visits" textLabel="ii1-Li-ZSh" detailTextLabel="joz-gZ-oC4" style="IBUITableViewCellStyleValue1" id="1IC-ko-Qeh">
                                 <rect key="frame" x="0.0" y="300" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1IC-ko-Qeh" id="wME-45-6UZ">
@@ -143,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="group" textLabel="5mR-kt-zXD" detailTextLabel="7mk-4O-ED1" style="IBUITableViewCellStyleSubtitle" id="YEL-0e-I9A">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="visitCell" textLabel="5mR-kt-zXD" detailTextLabel="7mk-4O-ED1" style="IBUITableViewCellStyleSubtitle" id="YEL-0e-I9A">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEL-0e-I9A" id="wlY-Hp-FAR">
@@ -343,7 +343,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fOs-65-eMX"/>
+        <segue reference="VSr-AM-ut3"/>
         <segue reference="ErT-tV-Gjd"/>
     </inferredMetricsTieBreakers>
 </document>

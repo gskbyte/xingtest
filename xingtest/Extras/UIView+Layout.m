@@ -377,8 +377,7 @@
 
 - (void) setPositionAndSizeFromView:(UIView*)view
 {
-    [self setPositionAndSizeFromView:view
-                              margin:0];
+    self.frame = view.frame;
 }
 
 - (void) setPositionAndSizeFromView:(UIView*)view
@@ -396,7 +395,7 @@
 
 - (void) fillParent
 {
-    [self fillParentWithMargin:0];
+    self.frame = self.superview.bounds;
 }
 
 - (void) fillParentWithMargin:(CGFloat)margin
